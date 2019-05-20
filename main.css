@@ -1,0 +1,46 @@
+@font-face { font-family: 'Avenir';
+             src: url('fonts/AvenirNextLTPro-Regular.otf');
+             font-weight: bold;
+           }
+html, body {
+ overflow: hidden;
+}
+
+section {
+ height: 100vh;
+ margin-bottom: 45px;
+}
+
+#splashNavBar {
+ height: 55px;
+ background-color: #98998B;
+}
+
+#splashFooter {
+ height: 45px;
+ background-color: #676859;
+}
+
+#copyrightInfo {
+ font-size: 25px;
+ color: white;
+ font-family: 'Avenir';
+}
+#trackBinText{
+  font-family: 'Avenir';
+  font-size: 35px;
+  color: purple;
+}
+#albumVertical {
+ background-image: url('resources/track.jpg');
+ opacity: 0.5;
+ background-size: 100vh auto;
+
+}
+
+hr {
+   margin-top: 0;
+   margin-bottom: 0px;
+   border: 0;
+   border-top: 2px solid #000000;
+}
