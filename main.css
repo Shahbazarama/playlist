@@ -3,7 +3,7 @@
              font-weight: bold;
            }
 html, body {
- overflow: hidden;
+ overflow-y: hidden;
 }
 
 section {
@@ -39,9 +39,46 @@ section {
   color: white;
   font-family: 'Avenir';
 }
+#playlistSelection{
+  padding-left: 55px;
+  padding-right: 55px;
+}
 
-#playlistInfoBox {
+.albumsSelectedBox {
+  height: 25vh;
+  width: 90vw;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: #EEEEEE;
+  border-style: solid;
+  border-width: thick;
+}
+
+.albumsSelectedText{
+  height: 167px;
+  padding-bottom: : 15px;
+  overflow: auto;
+}
+
+.albumsSelectedText p {
+  font-size: 20px;
+  font-family: 'Avenir';
+  padding-left: 5px;
+  margin: 0;
+}
+
+.albumOverflow{
+  min-width: 90vw;
+  height: 150px;
+  overflow-x: scroll;
+  white-space:nowrap;
+}
+
+#horizontalImages img{
+  width:145px;
+  height: auto;
+  padding-right: 35px;
+  padding-top: 25px;
 }
 
 #splashFooter {
@@ -65,26 +102,21 @@ section {
   text-align: center;
 }
 
-.displayedAlbums {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-
+#indexAlbums{
+  height: 85vh;
 }
-.displayedAlbums {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
+#indexAlbums img {
+
+  width: 170px;
+  height: auto;
+
 }
 
 .displayedAlbums::after {
   content: "";
   background: url('resources/track.jpg');
   background-size: 100vh auto;
-  opacity: 0.5;
+  opacity: 0.19;
   top: 0;
   left: 0;
   bottom: 0;
