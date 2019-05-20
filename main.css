@@ -11,9 +11,37 @@ section {
  margin-bottom: 45px;
 }
 
+.btn-primary{
+  color: white;
+  background-color: #363524;
+  border-color: #363524;
+  width: 216px;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: #67675B !important;
+  border-color: #363524 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 #splashNavBar {
  height: 55px;
  background-color: #98998B;
+}
+#playlistNavBar {
+ height: 155px;
+ background-color: #98998B;
+}
+#playlistHeader {
+  padding-left: 55px;
+  margin: 0px;
+  font-size: 35px;
+  color: white;
+  font-family: 'Avenir';
+}
+
+#playlistInfoBox {
+  background-color: #EEEEEE;
 }
 
 #splashFooter {
@@ -22,20 +50,47 @@ section {
 }
 
 #copyrightInfo {
+  padding-top: 5px;
+  padding-left: 55px;
  font-size: 25px;
  color: white;
  font-family: 'Avenir';
 }
+
 #trackBinText{
   font-family: 'Avenir';
-  font-size: 35px;
+  font-size: 55px;
   color: purple;
+  margin: 0px;
+  text-align: center;
 }
-#albumVertical {
- background-image: url('resources/track.jpg');
- opacity: 0.5;
- background-size: 100vh auto;
 
+.displayedAlbums {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+
+}
+.displayedAlbums {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.displayedAlbums::after {
+  content: "";
+  background: url('resources/track.jpg');
+  background-size: 100vh auto;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 hr {
