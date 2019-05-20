@@ -17,6 +17,18 @@ function displayAlbumsOnPlaylist(images){
   }
 }
 
+// called when clear or submit button is pressed
+function clearPlaylist(){
+  fullPlaylist = {}
+  var albumList = document.getElementById("selectedAlbums");
+  var albumName = albumList.firstChild;
+
+  while( albumName ) {
+    albumList.removeChild( albumName );
+    albumName = albumList.firstChild;
+  }
+}
+
 function clickedAlbum(idNumber){
 
 
@@ -55,15 +67,7 @@ document.addEventListener('DOMContentLoaded', function(event){
   // Clear Button to remove data from playlist
   let clearButton = document.getElementById('clearbtn')
   clearButton.addEventListener('click', function(){
-
-    fullPlaylist = {}
-    var albumList = document.getElementById("selectedAlbums");
-    var albumName = albumList.firstChild;
-
-    while( albumName ) {
-      albumList.removeChild( albumName );
-      albumName = albumList.firstChild;
-    }
+    clearPlaylist()
   })
 
   // Submit button to POST playlist to server
@@ -80,6 +84,9 @@ document.addEventListener('DOMContentLoaded', function(event){
         console.log( response )
       })
       .catch(error => console.error('Error:', error));
+
+      // after submission, clear playlist
+      clearPlaylist()
   })
 
 })
