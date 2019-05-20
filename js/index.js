@@ -1,54 +1,37 @@
-document.addEventListener('DOMContentLoaded', function(event){
+function displayAlbumsOnIndex(images) {
+  // generate random unique numbers from images array size
+  var albumNums = []
+  while (albumNums.length < 3) {
+    var num = Math.floor(Math.random() * images.length);
+    if (albumNums.indexOf(num) === -1){
+      albumNums.push(num);
+    }
+  }
 
+  // select ID of image location parent
+  let imageWall = document.getElementById('indexAlbums')
+
+  for (var i = 0; i < 3; i++) {
+    let newImage = document.createElement('img')
+
+    // select image from json based on random numbers
+    newImage.src = `images/${images[albumNums[i]].cover_art}`
+
+    // apend specific cover to imageWall
+    imageWall.appendChild(newImage)
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
   fetch('https://lit-fortress-6467.herokuapp.com/object')
-  .then((response) => {
-    return response.json()
-  })
-  .then((json) => {
-    console.log(json)
-  })
-  .catch((err) => {
-    console.log('hit error', err)
-  })
-  /*
-
-  // GET data from API call
-  fetch('https://galvanize-student-apis.herokuapp.com/gpersonnel/roles')
-    .then(function(response) {
+    .then((response) => {
       return response.json()
-    }).then(function(json) {
-      parsedJson(json)
-    }).catch(function(ex) {
-      console.log('parsing failed', ex)
     })
-
-
-    // POST the data from the profile
-    fetch('https://galvanize-student-apis.herokuapp.com/gpersonnel/users', {
-        method: 'POST',
-        body: JSON.stringify({
-          firstName: firstNameEntry.value,
-          lastName: lastNameEntry.value,
-          role: currentRole
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(response) {
-        // set status message in HTML
-        statusParagraph.innerHTML = response['message']
-
-        // toggle fade class using CSS transitions
-        statusParagraph.classList.toggle('fade')
-        setTimeout(function() {
-          statusParagraph.classList.toggle('fade')
-        }, 2000);
-
-      })
-      .catch(error => console.error('Error:', error));
-  */
+    .then((json) => {
+      const { results } = json
+      displayAlbumsOnIndex(results)
+    })
+    .catch((err) => {
+      console.log('hit error', err)
+    })
 })

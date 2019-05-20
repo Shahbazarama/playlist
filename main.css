@@ -17,6 +17,7 @@ section {
   border-color: #363524;
   width: 216px;
 }
+
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: #67675B !important;
   border-color: #363524 !important;
